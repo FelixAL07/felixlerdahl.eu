@@ -1,82 +1,147 @@
 /* Define CSS variables for colors, spacing, and font size */
 :root {
-    --background-color: #f0f0f0;
-    --text-color: #333;
-    --primary-color: #4CAF50;
-    --font-size: 16px;
-    --gap: clamp(1rem, 2vw, 2rem); /* Responsive gap control */
-  }
-  
-  /* Dark theme variables */
-  [data-theme="dark"] {
-    --background-color: #333;
-    --text-color: #f0f0f0;
-    --primary-color: #FF5722;
-  }
-  
-  /* Base styling */
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-size: var(--font-size);
+    --background-light: #ffffff;
+    --background-dark: #333333;
+    --text-light: #333333;
+    --text-dark: #ffffff;
+    --icon-light: #FF5722; /* Color for sun icon in light mode */
+    --icon-dark: #FFEB3B; /* Color for moon icon in dark mode */
+    --primary-color: #6200ea; /* Primary color for buttons and accents */
+    --text-color: var(--text-light); /* Default text color */
+    --font-size: 1rem; /* Base font size */
+    --gap: 1rem; /* Gap between header elements */
+}
+
+body {
+    background-color: var(--background-light);
+    color: var(--text-light);
+    font-size: 16px;
     font-family: Arial, sans-serif;
     display: flex;
     flex-direction: column;
-    gap: var(--gap); /* Use gap for spacing */
     min-height: 100vh;
-    align-items: center;
-    justify-content: flex-start;
-    margin: 0;
-    padding: 2rem;
-  }
-  
-  /* Header and button styling */
-  header {
+    gap: var(--gap);
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+[data-theme="dark"] {
+    background-color: var(--background-dark);
+    color: var(--text-dark);
+}
+
+[data-theme="light"] {
+    background-color: var(--background-light);
+    color: var(--text-light);
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Styling for the moon and sun icons */
+#moon-icon,
+#sun-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+/* Light theme icon colors */
+[data-theme="light"] #sun-icon {
+    fill: var(--icon-light); /* Sun icon color in light mode */
+}
+
+[data-theme="light"] #moon-icon {
+    fill: transparent; /* Hide moon icon */
+}
+
+/* Dark theme icon colors */
+[data-theme="dark"] #moon-icon {
+    fill: var(--icon-dark); /* Moon icon color in dark mode */
+}
+
+[data-theme="dark"] #sun-icon {
+    fill: transparent; /* Hide sun icon */
+}
+
+/* Icon movement transition */
+.move-icon {
+    transform: translateX(10px); /* Move the icon smoothly */
+}
+
+/* Header and button styling */
+header {
+    display: flex;
+    flex-direction: row;
     align-items: center;
     gap: var(--gap);
     margin-bottom: 2rem;
-  }
-  
-  button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+/* General button styling */
+button {
     background-color: var(--primary-color);
     color: var(--text-color);
     border: none;
     padding: 0.5rem 1rem;
     font-size: var(--font-size);
     cursor: pointer;
-  }
-  
-  button:hover {
-    opacity: 0.8;
-  }
-  
-  /* Section styling */
-  section {
+    transition: opacity 0.3s ease; /* Smooth transition for opacity */
+}
+
+/* Button hover effect */
+button:hover {
+    opacity: 0.8; /* Reduce opacity on hover */
+}
+
+/* Toggle button styling */
+.toggle-container {
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size);
+    cursor: pointer;
+}
+
+.header-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap);
+    margin-top: 1rem;
+    margin-left: auto;
+}
+
+/* Section styling */
+section {
     width: 100%;
     max-width: 800px;
     margin: auto;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-  }
-  
-  ul {
+}
+
+ul {
     list-style: none;
     padding-left: 0;
-  }
-  
-  ul li {
+}
+
+ul li {
     margin: 0.5rem 0;
-  }
-  
-  /* Footer */
-  footer {
+}
+
+/* Footer */
+footer {
     margin-top: auto;
     text-align: center;
     font-size: 0.9rem;
-  }
-  
+}
