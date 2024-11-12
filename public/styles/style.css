@@ -1,0 +1,52 @@
+/* Define CSS variables for colors, spacing, and font size */
+:root {
+    --background-color: #f0f0f0;
+    --text-color: #333;
+    --primary-color: #4CAF50;
+    --font-size: 16px;
+    --gap: clamp(1rem, 2vw, 2rem); /* Responsive gap control */
+  }
+  
+  /* Dark theme variables */
+  [data-theme="dark"] {
+    --background-color: #333;
+    --text-color: #f0f0f0;
+    --primary-color: #FF5722;
+  }
+  
+  /* Base styling */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-size: var(--font-size);
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap); /* Use gap for spacing */
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+  }
+  
+  /* Header and button styling */
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap); /* Use gap for spacing */
+  }
+  
+  button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: var(--font-size);
+    cursor: pointer;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
