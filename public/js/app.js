@@ -44,9 +44,9 @@ themeToggle.addEventListener("click", () => {
   
   // Add move effect to the current active icon (moon or sun)
   if (newTheme === "dark") {
-    moonIcon.classList.add("move-icon");
+    moonIcon.classList.add("move-icon-sun");
   } else {
-    sunIcon.classList.add("move-icon");
+    sunIcon.classList.add("move-icon-moon");
   }
 });
 

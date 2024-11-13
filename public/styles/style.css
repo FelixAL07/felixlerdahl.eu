@@ -71,8 +71,12 @@ body {
 }
 
 /* Icon movement transition */
-.move-icon {
+.move-icon-sun {
     transform: translateX(10px); /* Move the icon smoothly */
+}
+
+.move-icon-moon {
+    transform: translateX(-10px); /* Move the icon smoothly */
 }
 
 /* Header and button styling */
