@@ -1,8 +1,15 @@
 {
-    "title": "Felix Lerdahl - ",
-    "portfolio": "Portfolio",
-    "about": "About",
-    "contact": "Contact",
-    "projects": "Projects",
-    "blog": "Blog"
+    "titlenames": {
+        "home": "Home",
+        "skills": "Skills",
+        "experience": "Experience",
+        "education": "Education",
+        "work": "Work",
+        "title": "Felix Lerdahl - ",
+        "portfolio": "Portfolio",
+        "about": "About",
+        "contact": "Contact",
+        "projects": "Projects",
+        "blog": "Blog"
+    }
 }
